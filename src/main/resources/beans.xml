@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+">
+    <bean id="userService" class="org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean">
+        <property name="serviceInterface" value="com.mycompany.jax.ws.UserService"/>
+        <property name="wsdlDocumentUrl" value="http://localhost:9020/Server/remoting/UserServiceEndPoint?wsdl"/>
+        <property name="namespaceUri" value="http://ws.jax.mycompany.com/"/>
+        <property name="serviceName" value="UserService"/>
+        <property name="portName" value="UserServiceEndPointPort"/>
+    </bean>
+
+</beans>
